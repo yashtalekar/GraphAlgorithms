@@ -16,7 +16,21 @@ struct vertex {
 };
 
 class Graph {
-    vector<pair<vertex, int>> adjacencyList;
+private:
+    vector<vector<pair<int, int>>> adjacencyList;
+    vector<vertex> vertices;
+    vector<int> dfs_nums;
+
+public:
+    Graph();
+
+    void addVertex(vertex v);
+
+    void addEdge(vertex v1, vertex v2, int weight = 1);
+
+    void depthFirstSearch(vector<int> &dfs_num, vertex startVertex);
+
+
 };
 
 
